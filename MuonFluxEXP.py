@@ -28,7 +28,7 @@ d_low = 10 * 10**3 # lowest expected height above ground of muon production in m
 d_high = 15 * 10**3 # greatest expected height above ground of muon production in m
 
 def D_round(R, d, x): # closed column density expression for curved atmosphere
-    return np.sqrt((R ** 2 / d ** 2) * np.cos(x) **2 + (2 * R / d) + 1) - (R * np.cos(x) / d) 
+    return np.sqrt((R ** 2 / d ** 2) * np.cos(x) **2 + (2 * R / d) + 1) - (R * np.cos(x) / d)
 
 def MuonEFlux(Dfunc, I_0, n): # muon energy integrated flux
     return I_0 * (Dfunc) ** (-(n - 1))
@@ -57,8 +57,8 @@ Nerr = np.array([np.sqrt(N)]) # count uncertainty
 observ_time = np.array([70000, 70000, 4000, 4000, 4000, 4000]) # observation time in seconds
 flux= MuonFlux(N, A, observ_time) # calculated flux without subtracting accidental rate
 newflux = ((N / observ_time) - 0.00001536765222) / A # final calculated flux removing rate of accidentals
-observerr = FluxErr(N, Nerr, A, Aerr) 
-newerr = newflux * observerr # total flux uncertainty 
+observerr = FluxErr(N, Nerr, A, Aerr)
+newerr = newflux * observerr # total flux uncertainty
 
 x = np.linspace(0, np.pi / 2, 2000)
 
@@ -120,3 +120,4 @@ chisquare2 = stats.chisquare(flux, cosfit(theta, *popt2), 2) # chi-squared test 
 print(MuonEFlux(D_round(R, d_high, np.pi/2), n_fit[0], n_fit[1]))
 
 # making some new changes in order to see if push/pull requests work??
+# making another change to make sure we can push this to github
