@@ -1,5 +1,7 @@
 Programs written for analysis and presentation of experimental data obtained throughout
 completion of the [PHYS 128Al] - Advanced Laboratory Methods course at UCSB
+Also includes the final presentation as a pdf document. My contributions begin
+at slide 20 'Results and Analysis'
 
 1. fitcheck.py
   - functions calculating the wavelength of a coherent laser source,
